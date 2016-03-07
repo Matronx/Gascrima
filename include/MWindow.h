@@ -7,14 +7,15 @@
 
 #ifndef MWINDOW_H
 #define	MWINDOW_H
-#include <stdio.h>
+#include "all_heads.h"
 class MWindow {
 public:
     MWindow();
     MWindow(const MWindow& orig);
     virtual ~MWindow();
 private:
-
+    SDL_Window      *Window = NULL;
+    SDL_Surface     *Surface = NULL;
 };
 
 #endif	/* MWINDOW_H */

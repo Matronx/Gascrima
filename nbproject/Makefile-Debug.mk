@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/source/Log.o \
 	${OBJECTDIR}/source/MWindow.o
 
 
@@ -61,12 +62,17 @@ LDLIBSOPTIONS=-Lsource -Linclude
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gascrima_v2.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gascrima_v2 ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gascrima_v2 ${OBJECTFILES} ${LDLIBSOPTIONS} -lmingw32 -lSDL2main -lSDL2 -mwindows
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Werror -Iinclude -Isource -Isource -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/source/Log.o: nbproject/Makefile-${CND_CONF}.mk source/Log.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -Iinclude -Isource -Isource -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Log.o source/Log.cpp
 
 ${OBJECTDIR}/source/MWindow.o: nbproject/Makefile-${CND_CONF}.mk source/MWindow.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source

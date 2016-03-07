@@ -4,7 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>include/LOG.h</itemPath>
       <itemPath>include/MWindow.h</itemPath>
+      <itemPath>include/all_heads.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,6 +15,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>source/Log.cpp</itemPath>
       <itemPath>source/MWindow.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -35,7 +38,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>MinGW|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>true</rebuildPropChanged>
       </toolsSet>
@@ -54,6 +57,7 @@
             <pElem>source</pElem>
             <pElem>include</pElem>
           </linkerAddLib>
+          <commandLine>-lmingw32 -lSDL2main -lSDL2 -mwindows</commandLine>
         </linkerTool>
       </compileType>
       <folder path="HeaderFiles">
@@ -70,9 +74,15 @@
           </incDir>
         </ccTool>
       </folder>
+      <item path="include/LOG.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/MWindow.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/all_heads.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Log.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/MWindow.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -97,9 +107,15 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="include/LOG.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/MWindow.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/all_heads.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Log.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/MWindow.cpp" ex="false" tool="1" flavor2="0">
       </item>
